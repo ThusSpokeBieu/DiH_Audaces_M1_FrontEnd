@@ -1,12 +1,18 @@
 body{
-    background-color: #ffd700;
+    background-color: gold;
 }
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    color: #A52A2A;
+    color: brown;
     text-align: center;
 }
-p{
+p {
     font-size: 14px;
+}
+#nextbutton {
+    border-radius: 20px;
+    padding: 10px;
+    border: solid 2px black;
+    margin-top: 20px;
 }
