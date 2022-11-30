@@ -4,8 +4,12 @@ body{
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    color: brown;
+    color: white;
     text-align: center;
+    background-image: url("./img/title-background.png");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
 }
 p {
     font-size: 14px;
