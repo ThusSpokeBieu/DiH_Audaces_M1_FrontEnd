@@ -35,9 +35,9 @@ body {
   a {
     color: white;
     text-decoration: none;
-    transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
+    transition-duration: 300ms;
+    -webkit-transition-duration: 300ms;
+    -moz-transition-duration: 300ms;
   }
 
   a:hover {
