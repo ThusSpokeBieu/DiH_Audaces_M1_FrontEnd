@@ -60,12 +60,20 @@ body {
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    color: white;
+    color: teal;
     text-align: center;
-    background-image: url("./img/title-background.png");
+    vertical-align: middle;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    background-image: url("./img/title-background.jpg");
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
+    height: 40px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 0.3%;
 }
 h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -108,6 +116,7 @@ figcaption{
     text-align: center;
     background-color: black;
     color: white;
+    bottom:0;
     margin: 0;
     padding: 0;
   }
