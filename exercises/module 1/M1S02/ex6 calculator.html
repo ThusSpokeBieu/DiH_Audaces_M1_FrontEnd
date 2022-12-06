@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS1S02 - Exercise 6</title>
+</head>
+<body>
+    <script>
+        let calculationType;
+        let firstNumber; 
+        let secondNumber;
+        let result;
+
+        function setCalculationType(){
+            calculationType = prompt(`Please, insert the calculation type: \n+  to sum\n-  to subtract\n*  to multiply\n/  to divide`)
+            if (calculationType != "+" && calculationType != "-" && calculationType != "*" && calculationType != "/"){
+                alert(`Invalid type, please try again.`)
+                setCalculationType();
+            }
+        }
+
+        function setFirstNumber(){
+            firstNumber = Number(prompt(`Insert the first number of calculation.`));
+            if(isNaN(firstNumber)){
+                alert(`Please insert a correct number`)
+                setFirstNumber();
+            }
+        }
+
+        function setSecondNumber(){
+            secondNumber = Number(prompt(`Insert the second number of calculation.`));
+            if(isNaN(secondNumber)){
+                alert(`Please insert a correct Number`)
+                setSecondNumber();
+            }
+        }
+
+        function toSum(a, b){
+            return a + b;
+        }
+
+        function toSubtract(a, b){
+            return a - b;
+        }
+
+        function toMultiply(a, b){
+            return a * b;
+        }
+
+        function toDivide(a, b){
+            return a / b;
+        }
+
+        function calculation(){
+            setCalculationType();
+            setFirstNumber();
+            setSecondNumber();
+
+            if(calculationType === "+"){
+                result = toSum(firstNumber, secondNumber);
+                alert(`The result of the operation is: \n${firstNumber} + ${secondNumber} = ${result}`)
+            }else if(calculationType === "-"){
+                result = toDivide(firstNumber, secondNumber);
+                alert(`The result of the operation is: \n${firstNumber} - ${secondNumber} = ${result}`)
+            }else if(calculationType === "*"){
+                result = toMultiply(firstNumber, secondNumber);
+                alert(`The result of the operation is: \n${firstNumber} * ${secondNumber} = ${result}`)
+            }else if(calculationType === "/"){
+                result = toDivide(firstNumber, secondNumber);
+                alert(`The result of the operation is: \n${firstNumber} / ${secondNumber} = ${result}`)
+            }
+        }
+
+        calculation();
+    </script>
+</body>
+</html>
