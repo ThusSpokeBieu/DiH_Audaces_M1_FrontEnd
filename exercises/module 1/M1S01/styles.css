@@ -57,24 +57,28 @@ body {
     min-height: 75vh;
   }
 
+div#divtitle{
+  display: flex;
+  justify-content: center;
+  background-image: url("./img/title-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  height: 40px;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 0.3%;
+}
+
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     color: teal;
-    text-align: center;
-    vertical-align: middle;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
     1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-    background-image: url("./img/title-background.jpg");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover;
-    height: 40px;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding: 0.3%;
 }
+
 h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
@@ -109,6 +113,7 @@ figcaption{
     flex: 32%;
     padding: 5px;
   }
+  
   footer {
     display: block;
     width: 100%;  
