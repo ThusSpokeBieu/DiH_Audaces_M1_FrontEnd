@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS1S02 - Exercise 4</title>
+</head>
+<body>
+    <script>
+        let sumNumber = 0;
+        let sumTotal = 0;
+
+        function sumNumbers(){
+            while(sumNumber != -1){
+                sumNumber = Number(prompt(`Insert a number to sum. \nIf you want to stop, insert -1`))
+                if(isNaN(sumNumber)){
+                    alert(`Insert a correct number`);
+                    sumNumbers();
+                } else {
+                    sumTotal = sumTotal + sumNumber;
+                }
+           } 
+        }
+
+        sumNumbers();
+        if(sumNumber == -1){ 
+            alert(sumTotal);
+        }
+    </script>
+    
+</body>
+</html>
