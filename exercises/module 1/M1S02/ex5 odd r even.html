@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS1S02 - Exercise 5</title>
+</head>
+<body>
+    <script>
+        let setNumber;
+        let oddNumbers = [];
+        let evenNumbers = [];
+
+        function getNumbers(){
+            setNumber = Number(prompt(`Insert a number`));
+            if(!isNaN(setNumber)){
+                for(var i = 1; i <= setNumber; i++){
+                    if (i % 2 == 0){
+                        evenNumbers.push(i);
+                    } else {
+                        oddNumbers.push(i);
+                    }
+                }
+            } else {
+                alert(`Please, insert a correct number`);
+                getNumbers();
+            }
+        }
+
+        getNumbers();
+        alert(`Up to the number ${setNumber} we got: \n${oddNumbers.length} odd numbers. \n${evenNumbers.length} even numbers. `);
+
+    </script>
+</body>
+</html>
