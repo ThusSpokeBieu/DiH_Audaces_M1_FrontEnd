@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function getTable(getNumber){
+          let table = [];
+          for(var i = 0; i < 11; i++){
+            table.push(`${getNumber} x ${i} = ${getNumber * i}`)
+          }
+          return table;
+        }
+
+        function getNumber(){
+          let setNumber = Number(prompt(`Insert a number`));
+          if(isNaN(setNumber)){
+            alert(`Please, insert a correct number`)
+            getNumber();
+          } else {
+            let table = getTable(setNumber)
+            alert(table.join(`\n`));
+          }
+        }
+
+        getNumber();
+    </script>
+</body>
+</html>
