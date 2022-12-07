@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS1S02 - Exercise 8</title>
+</head>
+<body>
+    <p>Initial value: <span id="initialValue"></span></p>
+    <p>Square value: <span id="squareValue"></span></p>
+    <p>Arithmetic progression: <span id="result"></span>    </p>
+    <script>
+        let initialValue;
+        let squareValue;
+
+        function getInitialValue(){
+            initialValue = Number(prompt(`Insert the initial number.`))
+            if(isNaN(initialValue)){
+                alert(`Please, insert a correct value`);
+                getInitialValue();
+            }
+        }
+        
+        function getSquareValue(){
+            squareValue = Number(prompt(`Insert the square number.`))
+            if(isNaN(squareValue)){
+                alert(`Please, insert a correct value`);
+                getSquareValue();
+            }
+
+        }
+
+        function calculateAP(){
+            getInitialValue();
+            getSquareValue();
+
+            let progression = [initialValue];
+            
+            for(var i = 1; i < 10; i++){
+                let newNumber = progression[progression.length - 1] + squareValue;
+                progression.push(newNumber);
+            }
+
+            alert(progression);
+
+            document.getElementById("initialValue").textContent = initialValue;
+            document.getElementById("squareValue").textContent = squareValue;
+            document.getElementById("result").textContent = progression;
+        }
+
+        calculateAP();
+    </script>
+</body>
+</html>
