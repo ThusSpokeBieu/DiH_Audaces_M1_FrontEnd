@@ -23,7 +23,7 @@
 
         function setFirstNumber(){
             firstNumber = Number(prompt(`Insert the first number of calculation.`));
-            if(isNaN(firstNumber)){
+            if(isNaN(firstNumber) || !isFinite(firstNumber)){
                 alert(`Please insert a correct number`)
                 setFirstNumber();
             }
@@ -31,7 +31,7 @@
 
         function setSecondNumber(){
             secondNumber = Number(prompt(`Insert the second number of calculation.`));
-            if(isNaN(secondNumber)){
+            if(isNaN(secondNumber) || !isFinite(secondNumber)){
                 alert(`Please insert a correct Number`)
                 setSecondNumber();
             }

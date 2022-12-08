@@ -14,7 +14,7 @@
 
         function getNumbers(){
             setNumber = Number(prompt(`Insert a number`));
-            if(!isNaN(setNumber)){
+            if(!isNaN(setNumber) && isFinite(setNumber)){
                 for(var i = 1; i <= setNumber; i++){
                     if (i % 2 == 0){
                         evenNumbers.push(i);

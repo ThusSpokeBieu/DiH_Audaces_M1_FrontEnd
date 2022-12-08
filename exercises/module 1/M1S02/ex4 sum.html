@@ -14,7 +14,7 @@
         function sumNumbers(){
             while(sumNumber != -1){
                 sumNumber = Number(prompt(`Insert a number to sum. \nIf you want to stop, insert -1`))
-                if(isNaN(sumNumber)){
+                if(isNaN(sumNumber) || !isFinite(sumNumber)){
                     alert(`Insert a correct number`);
                     sumNumbers();
                 } else {

@@ -18,7 +18,7 @@
 
         function getNumber(){
           let setNumber = Number(prompt(`Insert a number`));
-          if(isNaN(setNumber)){
+          if(isNaN(setNumber) || !isFinite(setNumber)){
             alert(`Please, insert a correct number`)
             getNumber();
           } else {

@@ -16,7 +16,7 @@
 
         function getInitialValue(){
             initialValue = Number(prompt(`Insert the initial number.`))
-            if(isNaN(initialValue)){
+            if(isNaN(initialValue) || !isFinite(initialValue)){
                 alert(`Please, insert a correct value`);
                 getInitialValue();
             }
@@ -24,7 +24,7 @@
         
         function getSquareValue(){
             squareValue = Number(prompt(`Insert the square number.`))
-            if(isNaN(squareValue)){
+            if(isNaN(squareValue) || !isFinite(squareValue)){
                 alert(`Please, insert a correct value`);
                 getSquareValue();
             }
