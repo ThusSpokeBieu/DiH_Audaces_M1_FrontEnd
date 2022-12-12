@@ -34,6 +34,9 @@
             if(isNaN(secondNumber) || !isFinite(secondNumber)){
                 alert(`Please insert a correct Number`)
                 setSecondNumber();
+            } else if (calculationType === "/" && secondNumber === 0){
+                alert(`It's impossible to divide to 0, select another number`)
+                setSecondNumber();
             }
         }
 
@@ -58,18 +61,25 @@
             setFirstNumber();
             setSecondNumber();
 
-            if(calculationType === "+"){
-                result = toSum(firstNumber, secondNumber);
-                alert(`The result of the operation is: \n${firstNumber} + ${secondNumber} = ${result}`)
-            }else if(calculationType === "-"){
-                result = toDivide(firstNumber, secondNumber);
-                alert(`The result of the operation is: \n${firstNumber} - ${secondNumber} = ${result}`)
-            }else if(calculationType === "*"){
-                result = toMultiply(firstNumber, secondNumber);
-                alert(`The result of the operation is: \n${firstNumber} * ${secondNumber} = ${result}`)
-            }else if(calculationType === "/"){
-                result = toDivide(firstNumber, secondNumber);
-                alert(`The result of the operation is: \n${firstNumber} / ${secondNumber} = ${result}`)
+            switch (calculationType) {
+                case "+":
+                    result = toSum(firstNumber, secondNumber);
+                    alert(`The result of the operation is: \n${firstNumber} + ${secondNumber} = ${result}`)
+                    break;
+                case "-":
+                    result = toSubtract(firstNumber, secondNumber);
+                    alert(`The result of the operation is: \n${firstNumber} - ${secondNumber} = ${result}`)
+                    break;
+                case "*":
+                    result = toMultiply(firstNumber, secondNumber);
+                    alert(`The result of the operation is: \n${firstNumber} * ${secondNumber} = ${result}`)
+                    break;
+                case "/":
+                    result = toDivide(firstNumber, secondNumber);
+                    alert(`The result of the operation is: \n${firstNumber} / ${secondNumber} = ${result}`)
+                    break;
+                default:
+                    break;
             }
         }
 

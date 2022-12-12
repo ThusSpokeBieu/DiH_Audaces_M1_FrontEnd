@@ -9,9 +9,9 @@
 <body>
     <script>
         function getAge(){
-        let age = Number(prompt("What's your age?"));           
+        let age = parseInt(prompt("What's your age?"));           
 
-          if (!isNaN(age) && Number.isInteger(age)){
+          if (!isNaN(age) && age >= 0){
             if (age <= 15){
               alert(`Your classification is young.`)
             } else if (age <= 64){
