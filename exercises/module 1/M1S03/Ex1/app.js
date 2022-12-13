@@ -15,10 +15,10 @@ function validateArray(array){
 }
 
 function procuraMinMax(array){
-    const VALIDATE = validateArray(array);
-    if (VALIDATE){
+    let validate = validateArray(array);
+    if (validate){
             array.sort(( a , b ) => a - b);
-            console.log(`O número mínimo é ${array[0]} e o número máximo é ${array[array.length - 1]}`);
+            console.log(`O número mínimo é ${array[0]} e o número máximo é ${array.at(-1)}`);
         } else {
             console.log("Não é possível encontrar.")
         }
