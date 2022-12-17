@@ -5,6 +5,7 @@ const LIST4 = [1, -1];
 const LIST5 = null;
 const LIST6 = [-2,-2,-2,-2];
 const LIST7 = [20, 10, 30];
+const LIST8 = [20, 10, 30];
 
 function validateArray(array){
     if (Array.isArray(array)){
