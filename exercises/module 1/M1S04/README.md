@@ -1,3 +1,3 @@
 # DevInBank
 
-Projeto que tem como intenção simular um banco.
+Projeto que tem como intenção simular uma página web de banco.
