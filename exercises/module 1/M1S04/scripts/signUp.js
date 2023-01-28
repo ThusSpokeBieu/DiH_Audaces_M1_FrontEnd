@@ -1,19 +1,19 @@
 if(localStorage.length === 0){
-  const users = [
+  const DevInBankUsers = [
     {
     name: "Devin House",
-    cpf: "00000000000",
-    celular: "99999999999",
+    cpf: "000.000.000-00",
+    celular: "(00) 99999-9999",
     senha: "adm1n_Dev1n",
     conta: new Date().getTime(),
-    saldo: 99999,
-    }
+    saldo: 9999999,
+    } 
   ]
 
-  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("DevInBankUsers", JSON.stringify(DevInBankUsers));
 }
 
-console.log(localStorage.getItem("users"))
+console.log(localStorage.getItem("DevInBankUsers"))
 
 const form = document.querySelector("form");
 const nameInput = document.getElementById("name");
@@ -92,16 +92,23 @@ form.addEventListener("submit", (event) => {
   
   let newUser = {
     name: nameInput.value,
-    cpf: cpfInput.value,
-    celular: celular,
+    cpf: generateCPF(cpfInput.value),
+    celular: generateCellphone(celular),
     senha: password,
     conta: new Date().getTime(),
     saldo: 0,
   }
 
-  let users = JSON.parse(localStorage.getItem("users"));
+  let users = JSON.parse(localStorage.getItem("DevInBankUsers"));
+
+  if (users.find(u => u.cpf === newUser.cpf)){
+    alert(`CPF de número ${newUser.cpf} já foi cadastrado \n \n 
+    Por favor verifique se já não possui uma conta.`)
+    return;
+  }
+
   users.push(newUser);
-  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("DevInBankUsers", JSON.stringify(users));
 
   
   form.submit();
@@ -111,9 +118,7 @@ form.addEventListener("submit", (event) => {
 });
 
 function validateCpf(cpf) {
-   if (new Set(cpf.split("")).size === 1) {
-     return false;
-   }
+   if (new Set(cpf.split("")).size === 1) return false;
    if (cpf.length !== 11) return false;
    return true;
 }
@@ -121,7 +126,23 @@ function validateCpf(cpf) {
 function validateCelular(cellphone) {
     cellphone = cellphone.replace(/[^\d]+/g,'');
 
+    if (new Set(cellphone.split("")).size === 1) return false;
     if (cellphone.length !== 11) return false;
 
     return true;
 }
+
+function generateCPF(cpf) {
+  cpf = "" + cpf
+  cpf = cpf.slice(0, 9) + "-" + cpf.slice(9);
+  cpf = cpf.slice(0, 6) + "." + cpf.slice(6);
+  cpf = cpf.slice(0, 3) + "." + cpf.slice(3);
+  return cpf;
+}
+
+function generateCellphone(cellphone) {
+  cellphone = "" + cellphone;
+  cellphone = "(" + cellphone.slice(0, 2) + ") " + cellphone.slice(2, 7) + "-" + cellphone.slice(7);
+  return cellphone;
+}
+
