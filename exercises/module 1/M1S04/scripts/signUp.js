@@ -1,3 +1,10 @@
+window.onload = () => {
+  if (localStorage.getItem("loggedInUser")) {
+  confirm("Você já tem uma conta!")
+  window.location.replace("./operations.html");
+ }
+}
+
 if(localStorage.length === 0){
   const DevInBankUsers = [
     {
@@ -58,7 +65,7 @@ form.addEventListener("submit", (event) => {
 
   for (let input of inputs) {
     if (input.value === "") {
-      alert("Todos os campos devem ser preenchidos");
+      confirm("Todos os campos devem ser preenchidos");
       return;
     }
   }
@@ -66,26 +73,26 @@ form.addEventListener("submit", (event) => {
   const password = document.querySelector("#pwd").value;
   const confirmPassword = document.querySelector("#pwd-confirm").value;
   if (password !== confirmPassword) {
-    alert("As senhas não coincidem");
+    confirm("As senhas não coincidem");
     return;
   }
 
   const cpf = document.querySelector("#cpf").value;
   if (!validateCpf(cpf)) {
-    alert("CPF inválido");
+    confirm("CPF inválido");
     return;
   }
 
   const celular = document.querySelector("#celular").value;
   if (!validateCelular(celular)) {
-    alert("Celular inválido");
+    confirm("Celular inválido");
     return;
   }
 
   let re = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/
   
   if(!re.test(password)){
-    alert(`Senha fraca, por favor, insira uma senha com os requisitos: \n - Pelo menos 8 caracteres. \n - Pelo menos um número. \n - Pelo menos um caracter maiusculo. \n - Pelo menos um caracter minusculo. \n - Pelo menos um símbolo. `)
+    confirm(`Senha fraca, por favor, insira uma senha com os requisitos: \n - Pelo menos 8 caracteres. \n - Pelo menos um número. \n - Pelo menos um caracter maiusculo. \n - Pelo menos um caracter minusculo. \n - Pelo menos um símbolo. `)
     return 
   }
 
@@ -102,7 +109,7 @@ form.addEventListener("submit", (event) => {
   let users = JSON.parse(localStorage.getItem("DevInBankUsers"));
 
   if (users.find(u => u.cpf === newUser.cpf)){
-    alert(`CPF de número ${newUser.cpf} já foi cadastrado \n \n 
+    confirm(`CPF de número ${newUser.cpf} já foi cadastrado \n \n 
     Por favor verifique se já não possui uma conta.`)
     return;
   }
@@ -112,7 +119,7 @@ form.addEventListener("submit", (event) => {
 
   
   form.submit();
-  alert(`Parabéns ${newUser.name}, sua conta foi criada. \n
+  confirm(`Parabéns ${newUser.name}, sua conta foi criada. \n
   \n Seu número de conta é ${newUser.conta}, use seu cpf e senha para entrar.`)
 
 });
