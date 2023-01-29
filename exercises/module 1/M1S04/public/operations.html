@@ -13,7 +13,7 @@
   <header>
     <nav class="navbar navbar-expand-xxl bg-dark navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">DevInBank</a>
+        <a class="navbar-brand" href="../index.html">DevInBank</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -55,14 +55,102 @@
           <button type="button" class="btn btn-danger btn-lg w-30" id="logout">Sair da conta</button>
         </div>
         <div class="col-sm-4 ">
-          <button type="button" class="btn btn-success btn-lg">Depositar</button><br><br>
-          <button type="button" class="btn btn-primary btn-lg">Sacar</button><br><br>
-          <button type="button" class="btn btn-warning btn-lg">Transferir</button><br><br>
+          <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#deposito">Depositar</button><br><br>
+          <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#saque">Sacar</button><br><br>
+          <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#Transferencia">Transferir</button><br><br>
         </div>
       </div>
     </div>
 
     </main>
+
+    <div class="modal" id="deposito">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+         <form>
+          <div class="modal-header">
+            <h4 class="modal-title">Depositar</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <div class="modal-body">
+              <div class="mb-3 mt-3 input-group">
+                <span class="input-group-text">R$</span>
+                <input type="number" class="form-control" id="depositValue" placeholder="Insira o valor do depósito" name="depositValue" min="0" max="1000" step="0.5">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Senha:</label>
+                <input type="password" class="form-control" id="depositPwd" placeholder="Insira sua senha" name="pswd">
+              </div>
+            </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" id="enviarDeposito">Depositar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="saque">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+         <form>
+          <div class="modal-header">
+            <h4 class="modal-title">Sacar</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <div class="modal-body">
+              <div class="mb-3 mt-3 input-group">
+                <span class="input-group-text">R$</span>
+                <input type="number" class="form-control" id="withdrawValue" placeholder="Insira o valor do saque" name="withdrawValue" min="0" max="1000" step="0.5">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Senha:</label>
+                <input type="password" class="form-control" id="withdrawPwd" placeholder="Insira sua senha" name="pswd">
+              </div>
+            </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" id="enviarSaque">Sacar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="Transferencia">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+         <form>
+          <div class="modal-header">
+            <h4 class="modal-title">Transferir</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <div class="modal-body">
+            <div class="mb-3 mt-3 input-group">
+              <span class="input-group-text">Transferir para:</span>
+              <input type="string" class="form-control" id="transferAccount" placeholder="Conta para qual vai transferir" name="transferAccount">
+            </div>
+              <div class="mb-3 mt-3 input-group">
+                <span class="input-group-text">R$</span>
+                <input type="number" class="form-control" id="transferValue" placeholder="Insira o valor do depósito" name="transferValue" min="0" max="1000" step="0.5">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Senha:</label>
+                <input type="password" class="form-control" id="transferPwd" placeholder="Insira sua senha" name="pswd">
+              </div>
+            </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" id="enviarTransferencia">Transferir</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
 
   <footer class="text-center text-lg-start bg-light text-muted">
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">

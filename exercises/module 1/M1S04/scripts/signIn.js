@@ -31,7 +31,7 @@ loginButton.addEventListener("click", function(event) {
     });
 
     if (user) {
-        localStorage.setItem("loggedInUser", JSON.stringify(user));
+        localStorage.setItem("loggedInUser", user.conta);
         confirm("Login realizado com sucesso!")
         window.location.href = "./operations.html";
     } else {
