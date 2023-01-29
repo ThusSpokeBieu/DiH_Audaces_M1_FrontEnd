@@ -41,26 +41,36 @@
   <main>
     <div class="container p-5">
     <h2>Registrar</h2>
-    <form action="#">
+    <form action="#" class="was-validated">
       <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="name" placeholder="Coloque seu nome" name="name">
+        <input type="text" class="form-control" id="name" placeholder="Coloque seu nome" name="name" required>
         <label for="name">Nome</label>
+        <div class="invalid-feedback">Insira seu nome completo, apenas letras e espaço.</div>
       </div>
       <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="cpf" placeholder="Coloque seu cpf" name="cpf">
+        <input type="text" class="form-control" id="cpf" placeholder="Coloque seu cpf" name="cpf" required>
         <label for="cpf">CPF</label>
+        <div class="invalid-feedback">Insira seu CPF, apenas números.</div>
       </div>
       <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="celular" placeholder="Coloque seu celular" name="celular">
+        <input type="text" class="form-control" id="celular" placeholder="Coloque seu celular" name="celular" required>
         <label for="celular">Celular</label>
+        <div class="invalid-feedback">Insira seu número de celular, apenas números.</div>
       </div>
       <div class="form-floating mt-3 mb-3">
-        <input type="password" class="form-control" id="pwd" placeholder="Insira a senha" name="pswd">
+        <input type="password" class="form-control" id="pwd" placeholder="Insira a senha" name="pswd" required>
         <label for="pwd">Senha</label>
+        <div class="invalid-feedback">Insira sua senha, ela deverá conter:<br><br>
+          - Uma letra minúscula.<Br>
+          - Uma letra maiúscula.<br>
+          - Um número. <br>
+          - Um carácter especial.<br>
+          - Pelo menos oito caracteres. </div>
       </div>
       <div class="form-floating mt-3 mb-3">
-        <input type="password" class="form-control" id="pwd-confirm" placeholder="Insira a senha novamente." name="pswd-confirm">
+        <input type="password" class="form-control" id="pwd-confirm" placeholder="Insira a senha novamente." name="pswd-confirm" required>
         <label for="pwd-confirm">Confirmar Senha</label>
+        <div class="invalid-feedback">Confirme sua senha.</div>
       </div>
       <button type="submit" class="btn btn-success">Enviar</button> 
       <button type="reset" class="btn btn-danger">Cancelar</button>

@@ -13,7 +13,7 @@ if(localStorage.length === 0){
     celular: "(00) 99999-9999",
     senha: "adm1n_Dev1n",
     conta: new Date().getTime(),
-    saldo: 9999999,
+    saldo: 9999999.99,
     } 
   ]
 

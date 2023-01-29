@@ -41,8 +41,28 @@
   </header>
 
   <main>
+    <div class="container shadow-lg p-5 my-5 bg-dark border rounded text-white">
+      <h1><span id="nome"></span>, seja bem vindo! </h1>
+      <p>Abaixo está as informações da sua conta, caso queira fazer alguma operação aperte o botão referente a sua opção.</p>
+      <div class="row border p-3 my-1 border-warning rounded">
+        <div class="col-sm-8">
+          <p> <strong>DADOS DA CONTA:</strong></p>
+          <p>CPF: <span id="cpf"></span></p>
+          <p>Conta: <span id="account"></span></p>
+          <p>Saldo: R$ <span id="balance">******</span> </p>
+          <p><button type="button" class="btn btn-outline-warning btn-sm" id="showBal">Mostrar Saldo</button> <button type="button" class="btn btn-outline-danger btn-sm" id="hideBal">Esconder Saldo</button></p>
+          </span><br><br>
+          <button type="button" class="btn btn-danger btn-lg w-30" id="logout">Sair da conta</button>
+        </div>
+        <div class="col-sm-4 ">
+          <button type="button" class="btn btn-success btn-lg">Depositar</button><br><br>
+          <button type="button" class="btn btn-primary btn-lg">Sacar</button><br><br>
+          <button type="button" class="btn btn-warning btn-lg">Transferir</button><br><br>
+        </div>
+      </div>
+    </div>
 
-  </main>
+    </main>
 
   <footer class="text-center text-lg-start bg-light text-muted">
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
