@@ -11,7 +11,7 @@ console.log(users);
 let credentialInput = document.getElementById("credential");
 let passwordInput = document.getElementById("pwd");
 let loginButton = document.querySelector("button[type='submit']");
-let signupButton = document.querySelector("button[type='button']");
+let signupButton = document.getElementById("btn-signUp");
 
 credentialInput?.addEventListener("input", () => {
   let credential = credentialInput.value;
@@ -39,9 +39,7 @@ loginButton.addEventListener("click", function(event) {
     }
 });
 
-// Adiciona o evento de clique ao botão de registro
 signupButton.addEventListener("click", function() {
-    // Redireciona para a página de registro
     window.location.href = "./signUp.html";
 });
 
