@@ -10,10 +10,12 @@ export default class Juros {
   }
 
   calcularJurosSimples() {
-    return this.capitalInicial * this.taxaAplicada * this.tempo;
+    const jurosSimples = this.capitalInicial * this.taxaAplicada * this.tempo;
+    return `RS$ ${jurosSimples.toFixed(2).replace(".", ",")}`;
   }
 
   calcularJurosCompostos() {
-    return this.capitalInicial * (1 + this.taxaAplicada) ** this.tempo;
+    const jurosComposto = this.capitalInicial * (1 + this.taxaAplicada) ** this.tempo;
+    return `R$ ${jurosComposto.toFixed(2).replace(".", ",")}`;
   }
 }
