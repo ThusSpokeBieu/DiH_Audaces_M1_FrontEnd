@@ -1,0 +1,15 @@
+<div class="jumbotron">
+ <h1>{{ title }}</h1>
+
+ <div *ngIf="pictures.length > 0">
+     <img [src]="pictures[currentPic].img" style="margin: 1rem; height: 400px;">
+     <p style="margin: 1rem">{{ pictures[currentPic].name }}</p>
+     <p style="margin: 1rem">Picture {{ currentPic + 1 }} of {{ pictures.length }}</p>
+     <div style="margin: 1rem">      
+      <button (click)="returnToFirst()"> First  </button>
+      <button (click)="previousPicture()"> Previous </button>
+      <button (click)="nextPicture()"> Next </button> 
+      <button (click)="goToLast()"> Last </button>
+     </div>
+ </div>
+</div>
